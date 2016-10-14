@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>test</title>
+	<link rel="stylesheet" href="../dbox/dbox.css">
+	<style>
+		body,button{
+			font-size: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		(function(){
+                var docEl = document.documentElement,
+                    tid;
+                function setSize(){
+                    var rem =  docEl.clientWidth/10;
+                    docEl.style.fontSize = rem + 'px'; 
+                    //console.log(rem); 
+                }
+                window.addEventListener('resize', function() {
+                    if(tid)clearTimeout(tid);
+                    tid = setTimeout(setSize, 300);
+                }, false);
+                setSize();
+            })();
+	</script>
+	<script type="text/javascript" src="../dbox/dbox.js"></script>
+</head>
+<body>
+	<div><button id="btn">点我吧</button>
+	<button id="btn1">点我吧</button>
+	<button id="btn2">点我吧</button></div>
+	<script type="text/javascript">
+		if(DBox){
+			document.getElementById('btn').onclick = function(){
+				DBox({
+					dom:'ha',
+					type:'alert',
+					showClose:true,
+					outClose:true,
+					isRadius:true
+				});
+			};
+			document.getElementById('btn1').onclick = function(){
+				DBox({
+					dom:'ha',
+					type:'confirm',
+					yFn:function(){
+						alert('yes');
+						return false;
+					},
+					nFn:function(){
+						alert('no');
+					},
+					isRadius:true
+				});
+			};
+			document.getElementById('btn2').onclick = function(){
+				DBox({
+					dom:'ha',
+					type:'modbox',
+					outClose:true
+				});
+			};
+		}
+	</script>
+</body>
+</html>

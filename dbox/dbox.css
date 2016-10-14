@@ -1,0 +1,69 @@
+.dbox-cover{
+    background-color: rgba(0,0,0,1);
+    cursor: default;
+    opacity: .5;
+    position: fixed;
+    z-index: 19999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.dbox-wrap{
+    position: absolute;
+    z-index: 20000;
+    font-size: 16px;
+}
+.dbox-default{
+    background-color: #fff;
+}
+.dbox-radius{
+   border-radius: 8px; 
+}
+.dbox-alert{
+    
+}
+.dbox-confirm{
+    
+}
+
+.dclose-position{
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}
+.dtext{
+    text-align:center;
+    padding: .5em 0;
+}
+.dbuttons{
+    width: 100%;
+    text-align:center;
+    border-top: 1px solid #999;
+    font-size: 0;
+}
+.dbuttons button{ 
+    border:0;
+    background:transparent;
+    font-size: 14px;
+    padding: .5em 0;
+}
+.dbuttons .db-yes{
+    width: 50%;
+    background-color: #333;
+    color:#fff;
+}
+.dbuttons .db-no{
+    width: 50%;
+}
+.dbox-alert .db-yes{
+    width: 100%;
+}
+.dbox-radius.dbox-alert .db-yes{
+    border-radius: 0 0 8px 8px;
+}
+.dbox-radius.dbox-confirm .db-yes{
+    border-radius: 0 0 8px 0;
+}
